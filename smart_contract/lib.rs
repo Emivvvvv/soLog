@@ -5,7 +5,7 @@ pub mod states;
 use crate::{constant::*, states::*};
 
 // Is the program address
-declare_id!("HXc7keVUHXkwt86HpJKV88GfKYC94Cb4UeU3j5N5jvqs");
+declare_id!("6pv5oSTA4nMpqPciZwfvda34fkpLkEhV2MoVs6VW3xvY");
 
 #[program]
 pub mod solog {
@@ -197,7 +197,7 @@ pub struct CreateLongPost<'info> {
     seeds = [LONG_POST_SEED, authority.key().as_ref(), &[user_account.last_post_id as u8].as_ref()],
     bump,
     payer = authority,
-    space = 22873 + 8
+    space = 9897 + 8
     )]
     pub long_post_account: Account<'info, LongPostAccount>,
 
