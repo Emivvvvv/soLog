@@ -4,6 +4,7 @@ pub mod constant;
 pub mod states;
 use crate::{constant::*, states::*};
 
+// Is the program address
 declare_id!("HXc7keVUHXkwt86HpJKV88GfKYC94Cb4UeU3j5N5jvqs");
 
 #[program]
@@ -19,6 +20,7 @@ pub mod solog {
         user_account.last_post_id = 0;
         user_account.post_count = 0;
         user_account.authority = authority.key();
+        user_account.comment_count = 0;
 
         Ok(())
     }
