@@ -1,3 +1,7 @@
+<p align="left">
+  <img src="soLog_logo.png" width="75" title="hover text">
+</p>
+
 # soLog
 An anonymous blog that cannot be censored
 
