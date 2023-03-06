@@ -21,6 +21,7 @@ pub mod solog {
         user_account.post_count = 0;
         user_account.authority = authority.key();
         user_account.comment_count = 0;
+        user_account.long_post_count = 0;
 
         Ok(())
     }
