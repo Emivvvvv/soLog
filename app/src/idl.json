@@ -1,0 +1,487 @@
+{
+    "version": "0.1.0",
+    "name": "solog",
+    "constants": [
+        {
+            "name": "USER_SEED",
+            "type": "bytes",
+            "value": "[117, 115, 101, 114]"
+        },
+        {
+            "name": "POST_SEED",
+            "type": "bytes",
+            "value": "[112, 111, 115, 116]"
+        },
+        {
+            "name": "LONG_POST_SEED",
+            "type": "bytes",
+            "value": "[108, 111, 110, 103, 95, 112, 111, 115, 116]"
+        },
+        {
+            "name": "COMMENT_SEED",
+            "type": "bytes",
+            "value": "[99, 111, 109, 109, 101, 110, 116]"
+        },
+        {
+            "name": "GIF_COMMENT_SEED",
+            "type": "bytes",
+            "value": "[103, 105, 102, 95, 99, 111, 109, 109, 101, 110, 116]"
+        },
+        {
+            "name": "IMG_COMMENT_SEED",
+            "type": "bytes",
+            "value": "[105, 109, 103, 95, 99, 111, 109, 109, 101, 110, 116]"
+        }
+    ],
+    "instructions": [
+        {
+            "name": "initUser",
+            "accounts": [
+                {
+                    "name": "userAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "authority",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "avatar",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "createPost",
+            "accounts": [
+                {
+                    "name": "postAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "userAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "authority",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "content",
+                    "type": "string"
+                },
+                {
+                    "name": "img",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "createLongPost",
+            "accounts": [
+                {
+                    "name": "longPostAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "userAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "authority",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "content",
+                    "type": "string"
+                },
+                {
+                    "name": "img",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "createComment",
+            "accounts": [
+                {
+                    "name": "commentAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "userAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "authority",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "comment",
+                    "type": "string"
+                },
+                {
+                    "name": "toPost",
+                    "type": "publicKey"
+                }
+            ]
+        },
+        {
+            "name": "createGifComment",
+            "accounts": [
+                {
+                    "name": "gifCommentAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "userAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "authority",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "comment",
+                    "type": "string"
+                },
+                {
+                    "name": "gif",
+                    "type": "string"
+                },
+                {
+                    "name": "toPost",
+                    "type": "publicKey"
+                }
+            ]
+        },
+        {
+            "name": "createImgComment",
+            "accounts": [
+                {
+                    "name": "imgCommentAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "userAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "authority",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "comment",
+                    "type": "string"
+                },
+                {
+                    "name": "img",
+                    "type": "string"
+                },
+                {
+                    "name": "toPost",
+                    "type": "publicKey"
+                }
+            ]
+        }
+    ],
+    "accounts": [
+        {
+            "name": "UserAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string"
+                    },
+                    {
+                        "name": "avatar",
+                        "type": "string"
+                    },
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "lastPostId",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "postCount",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "longPostCount",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "commentCount",
+                        "type": "u8"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "PostAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "title",
+                        "type": "string"
+                    },
+                    {
+                        "name": "content",
+                        "type": "string"
+                    },
+                    {
+                        "name": "year",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "month",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "img",
+                        "type": "string"
+                    },
+                    {
+                        "name": "user",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "LongPostAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "id",
+                        "type": "u8"
+                    },
+                    {
+                        "name": "title",
+                        "type": "string"
+                    },
+                    {
+                        "name": "content",
+                        "type": "string"
+                    },
+                    {
+                        "name": "year",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "month",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "img",
+                        "type": "string"
+                    },
+                    {
+                        "name": "user",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "CommentAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "toPost",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "comment",
+                        "type": "string"
+                    },
+                    {
+                        "name": "year",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "month",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "user",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "GifCommentAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "toPost",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "comment",
+                        "type": "string"
+                    },
+                    {
+                        "name": "gif",
+                        "type": "string"
+                    },
+                    {
+                        "name": "year",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "month",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "user",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "ImgCommentAccount",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "toPost",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "comment",
+                        "type": "string"
+                    },
+                    {
+                        "name": "img",
+                        "type": "string"
+                    },
+                    {
+                        "name": "year",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "month",
+                        "type": "i64"
+                    },
+                    {
+                        "name": "user",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    }
+                ]
+            }
+        }
+    ],
+    "metadata": {
+        "address": "6pv5oSTA4nMpqPciZwfvda34fkpLkEhV2MoVs6VW3xvY"
+    }
+}
+
+
+
